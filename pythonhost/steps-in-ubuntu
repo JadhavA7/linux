@@ -1,0 +1,9 @@
+sudo apt-get update -y
+sudo apt-get install python3-venv python3-pip
+mkdir myapp
+python3 -m venv myenv
+source myenv/bin/activate
+nano requirements.txt
+pip run -r requirements.txt
+nano app.py
+gunicorn --bind 0.0.0.0/5000 app:app
